@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Metacat  </title>
+    <script data-main="js/app" src="js/lib/require.js"></script>
+    <link href="./lib/bootstrap.2.2.1.min.css" rel="stylesheet"/>
+    <link href="./lib/bootstrap-responsive.2.2.1.min.css" rel="stylesheet">
+    <link href="./lib/layout/jquery.layout.css" rel='stylesheet'/>
+    <link href="./lib/contextMenu/jquery.contextMenu.css" rel='stylesheet'/>
+    <link href="./css/styles.css" rel='stylesheet'/>
+    <link href="./css/jquery.jsonview.css" rel='stylesheet'/>
+  </head>
+  <body>
+    <div class="ui-layout-north  top-header">
+      <div class="row">
+      <div class="alert alert-success" id="helpMsg" style="display:none;margin-left: 30px;">
+        <strong>Success!</strong> Tracing started, press stop to get the trace.
+      </div>
+      </div>
+      <div>
+      <div class="page-title-container" style="float:left;">
+        <h4>Metacat</h4>
+      </div>
+      <div id="attachDiv" style="float:right;">
+            Selected Catalog : 
+            <select id="attached-vms"> 
+              <option value="none">None</option>
+            </select>
+      </div>
+      <div style="clear:both;"></div>
+      </div>
+    </div>
+    <div class="ui-layout-west">
+        <div class="actions"></div>
+        <div class="data"></div>
+    </div> 
+    <div class="ui-layout-center">
+        <div class="actions" style="display:none" >
+          Commands : 
+          <select id="user-commands">
+            <option value="none" selected>None</option> 
+          </select>
+        </div>
+        <div class="data" tabindex="2" style="float: left;padding: 9px;"></div>
+        <!-- pathTree goes here -->
+        <div class="tree"></div>
+    </div>
+  </body>
+</html>
