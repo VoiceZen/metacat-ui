@@ -3,7 +3,12 @@ define(["jquery", "app/eventBus", "app/renderers"], function ($, eventBus, rende
     renderer.registerRenderer("table", plot);
 
     function plot(selector, dataSet) {
-        addTable($(selector), dataSet);
+        var parent = $(selector);
+        var summaryEl = $('<div>').addClass('well');
+        var summaryDesc = JSON.stringify(dataSet.summary);
+        summaryEl.html(summaryDesc)
+        parent.append(summaryEl);
+        addTable(parent, dataSet.rows);
     }
 
 
