@@ -30,7 +30,7 @@ define(["jquery", "app/renderers", "app/commandManager", "app/eventBus","jquery-
             $(".ui-layout-west a.active").removeClass("active");
             $(event.target).addClass("active");
             if (vmId) {
-                showHelp("Trying to attach to vm, will show active functions on connect");
+                // showHelp("Trying to attach to vm, will show active functions on connect");
                 commandManager
                     .runCommand("attachToVM", vmId)
                     .onSuccess(function(){

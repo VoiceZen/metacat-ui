@@ -163,7 +163,9 @@ define(["app/datasource", "promise", "app/eventBus", "app/transformer"], functio
         ds.forJSON( url + "/table/" + tableName + "?includeInfo=true&includeDefinitionMetadata=true&includeDataMetadata=true")
         .then(
             function(data) {
-                var txedData = {"renderer": "table", "payload":data.fields}
+                data.metadata["name"] = tableName;
+                var txedData = {"renderer": "table", 
+                "payload": { "rows": data.fields, "summary" : data.metadata}}
                 fulfill(txedData);
             }, 
             function() {
